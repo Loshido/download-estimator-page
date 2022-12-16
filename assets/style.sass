@@ -1,0 +1,117 @@
+@font-face
+    font-family: "virgil"
+    src: url("virgil.ttf")
+
+*
+    margin: 0
+    border: 0
+    box-sizing: border-box
+body
+    background-color: #1b1d1e
+    background-image: url("roughness.png")
+    font-family: "virgil"
+    width: 100vw
+    height: 100vh
+    color: #fff
+    font-weight: 100
+    main
+        padding: 150px
+        width: 100vw
+        height: 100vh
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+
+::selection
+    background-color: #fff
+    color: #1b1d1e
+
+.inputs
+    height: 30vh
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    > div.case
+        position: relative
+        border-radius: 7.5px
+        width: 80%
+        display: grid
+        grid-template-columns: 55% 45%
+        &::after
+            position: absolute
+            top: 0
+            left: 0
+            content: ""
+            background-image: url("rectangle.png")
+            background-repeat: no-repeat
+            z-index: -1
+            background-size: contain
+            width: 100%
+            height: 100%
+        > :is(*:hover, *:focus)
+            border: none
+            outline: none
+        > input
+            padding: 10px
+            font-size: 1.2em
+            font-family: sans-serif
+            background-color: transparent
+        > select
+            margin-right: 5px
+            background-color: transparent
+            > option
+                color: #1b1d1e
+
+header
+    user-select: none
+    position: absolute
+    padding-top: 50px
+    top: 0
+    left: 0
+    width: 100%
+    text-align: center
+    font-size: 2em
+    > p
+        font-weight: 100
+        font-family: sans-serif
+        padding: .5em 0
+        font-size: .5em
+
+.output > div.case
+    display: grid
+    width: 25vw
+    grid-template-columns: repeat(4, 25%)
+    grid-template-rows: repeat(2, 50px)
+    align-items: center
+    justify-items: center
+    > .time
+        font-family: sans-serif
+        overflow: hidden
+        max-width: 100px
+
+@media (max-width: 1200px)
+    header
+        padding: 0
+        position: static
+    main
+        gap: 75px
+        justify-content: flex-start !important
+        flex-direction: column !important
+    .inputs
+        align-items: center
+        justify-content: flex-start !important
+        gap: 50px
+        height: auto !important
+    section.output
+        width: 100%
+        > div.case
+            width: 100%
+
+@media (max-width: 700px)
+    main
+        padding: 15px !important
+    section.inputs
+        max-width: calc(100vw - 30px)
+        > div.case
+            width: 100%

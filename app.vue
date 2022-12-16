@@ -41,23 +41,12 @@
 
 <script setup>
 import { evaluate, floor } from "mathjs"
-useHead({
-	title: "Download Estimator"
-})
+useHead({title: "Download Estimator"});
 
-const filesize = ref(1)
-const fileunit = ref("1000")
-const speedsize = ref(1)
-const speedunit = ref("1")
+const filesize = ref(1), fileunit = ref("1000");
+const speedsize = ref(1), speedunit = ref("1");
 
-const size = computed(() => filesize.value * evaluate(fileunit.value))
-const speed = computed(() => speedsize.value * evaluate(speedunit.value))
-const last = computed(() => {
-	return size.value / speed.value
-})
+const size = computed(() => filesize.value * evaluate(fileunit.value));
+const speed = computed(() => speedsize.value * evaluate(speedunit.value));
+const last = computed(() => size.value / speed.value);
 </script>
-
-<style>
-@import url(assets/setup.css);
-@import url(assets/style.css);
-</style>
