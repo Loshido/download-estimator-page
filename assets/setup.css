@@ -1,0 +1,31 @@
+@font-face {
+	font-family: "virgil";
+	src: url(virgil.ttf);
+}
+
+*{
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;}
+body{
+	font-family: "virgil";
+	width: 100vw;
+	height: 100vh;
+	background-color: #1b1d1e;
+	color: #fff;
+	font-weight: 100;}
+
+main{
+	padding: 150px;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+::selection{
+	background-color: #fff;
+	color: #1b1d1e;
+}
